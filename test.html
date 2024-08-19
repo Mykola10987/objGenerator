@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post" id="form">
+        <div class="form-example">
+          <label for="name">Name: </label>
+          <input type="text" name="form/name" id="name" value="Mykola" required />
+        </div>
+        <div class="form-example">
+          <label for="email">Email: </label>
+          <input type="email" name="form/email" id="email" value="mykola@qmail.com" required />
+        </div>
+        <div class="form-example">
+            <label for="age">Age: </label>
+            <input type="number" name="form/age" id="age" value="30" required />
+        </div>
+        <div class="form-example">
+            <input type="radio" name="form/gender" value="male" checked> Male<br>
+            <input type="radio" name="form/gender" value="female"> Female<br>
+            <input type="radio" name="form/gender" value="other"> Other
+        </div>
+        <div class="form-example">
+          <input type="submit" value="Subscribe!" />
+        </div>
+      </form>
+</body>
+<script src="./objGenerator.js"></script>
+<script>
+    document.querySelector('#form').addEventListener('submit', e => {
+    e.preventDefault()
+
+    console.log(objGenerator(document.querySelector('form'), 'name', '/'))
+    })
+</script>
+</html>
